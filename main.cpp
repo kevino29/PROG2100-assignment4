@@ -58,11 +58,6 @@ void initializeZombies(City& city, Zombie zombies[]) {
 }
 
 int main() {
-//    Human human = Human();
-//
-//    for (int i = 0; i < 10; i++) {
-//        cout << getRandomInt(i, GRIDSIZE) << endl;
-//    }
     City city;
     Human humans[HUMAN_STARTCOUNT];
     Zombie zombies[ZOMBIE_STARTCOUNT];
@@ -70,7 +65,6 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-//    cout << humans;
     cout << city;
 
     return 0;

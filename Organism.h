@@ -24,7 +24,7 @@ protected:
     bool moved;
     City city;
 
-    enum { WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS };
+    enum direction {WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS};
 
 public:
     Organism();

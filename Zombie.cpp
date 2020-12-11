@@ -33,7 +33,18 @@ void Zombie::spawn() {
 }
 
 void Zombie::move() {
+    auto dir = static_cast<direction>(rand() % NUM_DIRECTIONS);
 
+    switch(dir) {
+        case WEST:
+            break;
+        case NORTH:
+            break;
+        case EAST:
+            break;
+        case SOUTH:
+            break;
+    }
 }
 
 void Zombie::convert(Organism& organism) {
