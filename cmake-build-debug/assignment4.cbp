@@ -104,6 +104,12 @@
 		<Unit filename="E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Organism.h">
 			<Option target="assignment4"/>
 		</Unit>
+		<Unit filename="E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Zombie.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Zombie.h">
+			<Option target="assignment4"/>
+		</Unit>
 		<Unit filename="E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/main.cpp">
 			<Option target="assignment4"/>
 		</Unit>

@@ -3,3 +3,19 @@
 //
 
 #include "Human.h"
+
+using namespace std;
+
+Human::Human() {
+
+}
+
+Human::Human(City *city, int width, int height) {
+
+}
+
+Human::~Human() noexcept = default;
+
+void Human::move() {
+
+}

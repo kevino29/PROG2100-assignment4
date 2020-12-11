@@ -250,6 +250,33 @@ Organism.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/Organism.cpp.s
 .PHONY : Organism.cpp.s
 
+Zombie.obj: Zombie.cpp.obj
+
+.PHONY : Zombie.obj
+
+# target to build an object file
+Zombie.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/Zombie.cpp.obj
+.PHONY : Zombie.cpp.obj
+
+Zombie.i: Zombie.cpp.i
+
+.PHONY : Zombie.i
+
+# target to preprocess a source file
+Zombie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/Zombie.cpp.i
+.PHONY : Zombie.cpp.i
+
+Zombie.s: Zombie.cpp.s
+
+.PHONY : Zombie.s
+
+# target to generate assembly for a file
+Zombie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/Zombie.cpp.s
+.PHONY : Zombie.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -298,6 +325,9 @@ help:
 	@echo ... Organism.obj
 	@echo ... Organism.i
 	@echo ... Organism.s
+	@echo ... Zombie.obj
+	@echo ... Zombie.i
+	@echo ... Zombie.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
