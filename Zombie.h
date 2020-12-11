@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Organism.h"
+#include "Human.h"
 
 class Zombie : public Organism
 {
@@ -15,9 +16,12 @@ public:
     Zombie( City *city, int width, int height );
     ~Zombie() override;
 
+    void setSpecies(string species) override;
+    string getSpecies() override;
+
     void spawn() override;
     void move() override;
-    string getSpecies() override;
+    void convert(Organism& organism);
 };
 
 #endif //ASSIGNMENT4_ZOMBIE_H

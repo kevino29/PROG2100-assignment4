@@ -15,9 +15,11 @@ public:
     Human( City *city, int width, int height );
     ~Human() override;
 
+    void setSpecies(string species) override;
+    string getSpecies() override;
+
     void spawn() override;
     void move() override;
-    string getSpecies() override;
 };
 
 #endif //ASSIGNMENT4_HUMAN_H

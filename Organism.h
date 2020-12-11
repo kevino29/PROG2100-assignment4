@@ -33,6 +33,7 @@ public:
     virtual void spawn() = 0;
     virtual void move() = 0;
 
+    virtual void setSpecies(string species) = 0;
     virtual string getSpecies() = 0;
     void setX(int x);
     void setY(int y);

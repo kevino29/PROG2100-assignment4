@@ -4,6 +4,7 @@
 
 #include <string>
 #include "Zombie.h"
+#include "Human.h"
 
 using namespace std;
 
@@ -19,6 +20,14 @@ Zombie::Zombie(City *city, int width, int height) {
 
 Zombie::~Zombie() = default;
 
+void Zombie::setSpecies(string species) {
+    this->species = species;
+}
+
+string Zombie::getSpecies() {
+    return this->species;
+}
+
 void Zombie::spawn() {
 
 }
@@ -27,6 +36,5 @@ void Zombie::move() {
 
 }
 
-string Zombie::getSpecies() {
-    return this->species;
+void Zombie::convert(Organism& organism) {
 }

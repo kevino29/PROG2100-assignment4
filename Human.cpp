@@ -20,14 +20,18 @@ Human::Human(City *city, int width, int height) {
 
 Human::~Human() = default;
 
+void Human::setSpecies(string species) {
+    this->species = species;
+}
+
+string Human::getSpecies() {
+    return this->species;
+}
+
 void Human::spawn() {
 
 }
 
 void Human::move() {
 
-}
-
-string Human::getSpecies() {
-    return this->species;
 }

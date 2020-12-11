@@ -60,6 +60,9 @@ ostream& operator<<(ostream& output, City& city) {
 //    output << terminalGrid;
 //    return output;
 
+    // COLORIZING CONSOLE TEXT
+    // https://www.daniweb.com/programming/software-development/code/216345/add-a-little-color-to-your-console-text
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
     for (int i = 0; i < GRID_HEIGHT; i++) {
