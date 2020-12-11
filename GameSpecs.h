@@ -28,6 +28,7 @@ const int ITERATIONS = 1000; // max number of steps
 //7  = white regular		//16+ = solid blocks
 //8  = white pale
 
+const int GRID_COLOR = 4; // red
 const int HUMAN_COLOR = 3; // turquoise
 const int ZOMBIE_COLOR = 14; // bright yellow
 

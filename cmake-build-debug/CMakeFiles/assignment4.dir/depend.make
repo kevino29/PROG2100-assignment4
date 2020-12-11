@@ -3,6 +3,7 @@
 
 CMakeFiles/assignment4.dir/City.cpp.obj: ../City.cpp
 CMakeFiles/assignment4.dir/City.cpp.obj: ../City.h
+CMakeFiles/assignment4.dir/City.cpp.obj: ../GameSpecs.h
 
 CMakeFiles/assignment4.dir/GameSpecs.cpp.obj: ../GameSpecs.cpp
 CMakeFiles/assignment4.dir/GameSpecs.cpp.obj: ../GameSpecs.h
