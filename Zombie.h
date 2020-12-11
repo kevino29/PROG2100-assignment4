@@ -12,9 +12,9 @@ class Zombie : public Organism
 public:
     Zombie();
     Zombie( City *city, int width, int height );
-    virtual ~Zombie();
+    ~Zombie() override;
 
-    void move();
+    void move() override;
 };
 
 #endif //ASSIGNMENT4_ZOMBIE_H

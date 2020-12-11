@@ -6,15 +6,15 @@
 
 using namespace std;
 
-Human::Human() {
-
-}
+Human::Human() {}
 
 Human::Human(City *city, int width, int height) {
-
+    this->city = city;
+    this->width = width;
+    this->height = height;
 }
 
-Human::~Human() noexcept = default;
+Human::~Human() = default;
 
 void Human::move() {
 

@@ -12,9 +12,9 @@ class Human : public Organism
 public:
     Human();
     Human( City *city, int width, int height );
-    virtual ~Human();
+    ~Human() override;
 
-    void move();
+    void move() override;
 };
 
 #endif //ASSIGNMENT4_HUMAN_H

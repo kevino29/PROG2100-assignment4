@@ -28,7 +28,7 @@ public:
 
     void move();
 
-    friend ostream& operator<<( ostream &output, World &world );
+    friend ostream& operator<<( ostream &output, City &city );
 
 };
 
