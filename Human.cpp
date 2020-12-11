@@ -35,3 +35,7 @@ void Human::spawn() {
 void Human::move() {
 
 }
+
+void Human::recruit() {
+
+}

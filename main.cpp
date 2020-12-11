@@ -17,9 +17,9 @@ int generateRandomInt(int max) {
     return rand() % max;
 }
 
-void initializeHumans(Human humans[], City& city) {
-    int x = 0;
-    int y = 0;
+void initializeHumans(City& city, Human humans[]) {
+    int x;
+    int y;
 
     for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
         x = generateRandomInt(GRID_WIDTH);
@@ -37,6 +37,26 @@ void initializeHumans(Human humans[], City& city) {
     }
 }
 
+void initializeZombies(City& city, Zombie zombies[]) {
+    int x;
+    int y;
+
+    for (int i = 0; i < ZOMBIE_STARTCOUNT; i++) {
+        x = generateRandomInt(GRID_WIDTH);
+        y = generateRandomInt(GRID_HEIGHT);
+
+        if (city.getOrganism(x, y) == nullptr) {
+            Zombie zombie = Zombie(city, x, y);
+            zombies[i] = zombie;
+            city.setOrganism(&zombies[i], x, y);
+        }
+        else {
+            i--;
+            continue;
+        }
+    }
+}
+
 int main() {
 //    Human human = Human();
 //
@@ -45,8 +65,10 @@ int main() {
 //    }
     City city;
     Human humans[HUMAN_STARTCOUNT];
+    Zombie zombies[ZOMBIE_STARTCOUNT];
 
-    initializeHumans(humans, city);
+    initializeHumans(city, humans);
+    initializeZombies(city, zombies);
 
 //    cout << humans;
     cout << city;

@@ -32,11 +32,15 @@ void Organism::setY(int mY) {
     this->y = mY;
 }
 
-void Organism::endTurn() {
-
+int Organism::getRandomInt(int min, int max) {
+    return rand() % max + min;
 }
 
 bool Organism::isTurn() {
+
+}
+
+void Organism::endTurn() {
 
 }
 

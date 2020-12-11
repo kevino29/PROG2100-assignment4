@@ -20,6 +20,7 @@ public:
 
     void spawn() override;
     void move() override;
+    void recruit();
 };
 
 #endif //ASSIGNMENT4_HUMAN_H

@@ -41,10 +41,11 @@ public:
     int getX() const;
     int getY() const;
 
-    void endTurn();
+    int getRandomInt(int min, int max);
     bool isTurn();
+    void endTurn();
 
-    friend ostream& operator<<( ostream &output, Organism *organism );
+    friend ostream& operator<<(ostream &output, Organism *organism);
 };
 
 #endif //ASSIGNMENT4_ORGANISM_H
