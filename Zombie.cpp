@@ -12,7 +12,7 @@ Zombie::Zombie() {
     this->species = "Zombie";
 }
 
-Zombie::Zombie(City *city, int width, int height) {
+Zombie::Zombie(City city, int width, int height) {
     this->city = city;
     this->width = width;
     this->height = height;

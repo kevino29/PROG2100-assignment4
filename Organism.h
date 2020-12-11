@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include "City.h"
 
 using namespace std;
 
@@ -21,13 +22,13 @@ protected:
     int width;
     int height;
     bool moved;
-    City *city;
+    City city;
 
     enum { WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS };
 
 public:
     Organism();
-    Organism( City *city, int width, int height );
+    Organism(City city, int width, int height);
     virtual ~Organism();
 
     virtual void spawn() = 0;

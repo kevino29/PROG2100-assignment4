@@ -12,7 +12,7 @@ class Human : public Organism
 {
 public:
     Human();
-    Human( City *city, int width, int height );
+    Human(City city, int x, int y );
     ~Human() override;
 
     void setSpecies(string species) override;

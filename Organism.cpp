@@ -8,7 +8,7 @@ using namespace std;
 
 Organism::Organism() {}
 
-Organism::Organism(City *city, int width, int height) {
+Organism::Organism(City city, int width, int height) {
     this->city = city;
     this->width = width;
     this->height = height;
@@ -40,6 +40,6 @@ bool Organism::isTurn() {
 
 }
 
-ostream& operator<<( ostream &output, Organism *organism ) {
+ostream& operator<<(ostream &output, Organism *organism) {
 
 }

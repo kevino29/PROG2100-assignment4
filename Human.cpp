@@ -11,11 +11,11 @@ Human::Human() {
     this->species = "Human";
 }
 
-Human::Human(City *city, int width, int height) {
+Human::Human(City city, int x, int y) {
     this->species = "Human";
     this->city = city;
-    this->width = width;
-    this->height = height;
+    this->x = x;
+    this->y = y;
 }
 
 Human::~Human() = default;

@@ -4,6 +4,7 @@
 
 #include <string>
 #include <windows.h>
+#include "Organism.h"
 #include "City.h"
 #include "GameSpecs.h"
 
@@ -79,15 +80,38 @@ ostream& operator<<(ostream& output, City& city) {
             if (k == 0) {
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << "| ";
-                SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
-                output << "X"; // Human OR Zombie
+
+                if (city.grid[i][k] != nullptr) {
+                    if ((city.grid[i][k])->getSpecies() == "Human") {
+                        SetConsoleTextAttribute(hConsole, HUMAN_COLOR);
+                        output << "O"; // Human
+                    } else {
+                        SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
+                        output << "X"; // Zombie
+                    }
+                }
+                else
+                    output << " ";
+
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
             }
             else {
                 SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
                 output << " ";
-                output << "X"; // Human OR Zombie
+
+                if (city.grid[i][k] != nullptr) {
+                    if (city.grid[i][k]->getSpecies() == "Human") {
+                        SetConsoleTextAttribute(hConsole, HUMAN_COLOR);
+                        output << "O"; // Human
+                    } else {
+                        SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
+                        output << "X"; // Zombie
+                    }
+                }
+                else
+                    output << " ";
+
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
             }

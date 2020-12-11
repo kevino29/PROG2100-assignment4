@@ -13,7 +13,7 @@ class Zombie : public Organism
 {
 public:
     Zombie();
-    Zombie( City *city, int width, int height );
+    Zombie(City city, int width, int height);
     ~Zombie() override;
 
     void setSpecies(string species) override;

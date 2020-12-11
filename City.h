@@ -18,14 +18,14 @@ const int GRID_HEIGHT = 20;
 class City
 {
 protected:
-    Organism *grid[GRID_WIDTH][GRID_HEIGHT];
+    Organism *grid[GRID_WIDTH][GRID_HEIGHT] = {nullptr};
 
 public:
     City();
     virtual ~City();
 
     Organism *getOrganism( int x, int y );
-    void setOrganism( Organism *organism, int x, int y );
+    void setOrganism(Organism *organism, int x, int y);
 
     void move();
 
