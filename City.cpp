@@ -77,14 +77,14 @@ ostream& operator<<(ostream& output, City& city) {
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << "| ";
                 SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
-                output << "X";
+                output << "X"; // Human OR Zombie
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
             }
             else {
                 SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
                 output << " ";
-                output << "X";
+                output << "X"; // Human OR Zombie
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
             }

@@ -6,6 +6,7 @@
 #define ASSIGNMENT4_ORGANISM_H
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ class City;
 class Organism
 {
 protected:
+    string species;
     int x;
     int y;
     int width;
@@ -28,12 +30,15 @@ public:
     Organism( City *city, int width, int height );
     virtual ~Organism();
 
+    virtual void spawn() = 0;
     virtual void move() = 0;
-    //virtual void spawn() = 0;
-    //virtual int getSpecies() = 0; //this could also be coded concrete here
-    //virtual void getPosition() = 0;
 
-    void setPosition( int x, int y );
+    virtual string getSpecies() = 0;
+    void setX(int x);
+    void setY(int y);
+    int getX() const;
+    int getY() const;
+
     void endTurn();
     bool isTurn();
 

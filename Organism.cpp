@@ -16,8 +16,20 @@ Organism::Organism(City *city, int width, int height) {
 
 Organism::~Organism() = default;
 
-void Organism::setPosition(int x, int y) {
+int Organism::getX() const {
+    return this->x;
+}
 
+void Organism::setX(int mX) {
+    this->x = mX;
+}
+
+int Organism::getY() const {
+    return this->y;
+}
+
+void Organism::setY(int mY) {
+    this->y = mY;
 }
 
 void Organism::endTurn() {

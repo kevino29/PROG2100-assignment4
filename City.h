@@ -18,7 +18,7 @@ const int GRID_HEIGHT = 20;
 class City
 {
 protected:
-    Organism *grid[GRID_HEIGHT][GRID_WIDTH];
+    Organism *grid[GRID_WIDTH][GRID_HEIGHT];
 
 public:
     City();
