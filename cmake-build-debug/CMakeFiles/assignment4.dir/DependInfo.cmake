@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/City.cpp" "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/cmake-build-debug/CMakeFiles/assignment4.dir/City.cpp.obj"
-  "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/GameSpecs.cpp" "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/cmake-build-debug/CMakeFiles/assignment4.dir/GameSpecs.cpp.obj"
   "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Human.cpp" "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/cmake-build-debug/CMakeFiles/assignment4.dir/Human.cpp.obj"
   "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Organism.cpp" "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/cmake-build-debug/CMakeFiles/assignment4.dir/Organism.cpp.obj"
   "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/Zombie.cpp" "E:/Second_Year/First_Semester/Programming C++/Assignments/assignment4/cmake-build-debug/CMakeFiles/assignment4.dir/Zombie.cpp.obj"

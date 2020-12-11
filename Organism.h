@@ -28,7 +28,7 @@ protected:
 
 public:
     Organism();
-    Organism(City city, int width, int height);
+    Organism(City& city, int width, int height);
     virtual ~Organism();
 
     virtual void spawn() = 0;
@@ -40,6 +40,7 @@ public:
     void setY(int y);
     int getX() const;
     int getY() const;
+    void setCity(City& mCity);
 
     int getRandomInt(int min, int max);
     bool isTurn();

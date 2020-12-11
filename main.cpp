@@ -26,14 +26,17 @@ void initializeHumans(City& city, Human humans[]) {
         y = generateRandomInt(GRID_HEIGHT);
 
         if (city.getOrganism(x, y) == nullptr) {
-            Human human = Human(city, x, y);
-            humans[i] = human;
+            humans[i] = Human(city, x, y);
             city.setOrganism(&humans[i], x, y);
         }
         else {
             i--;
             continue;
         }
+    }
+
+    for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
+        humans[i].setCity(city);
     }
 }
 
@@ -46,14 +49,17 @@ void initializeZombies(City& city, Zombie zombies[]) {
         y = generateRandomInt(GRID_HEIGHT);
 
         if (city.getOrganism(x, y) == nullptr) {
-            Zombie zombie = Zombie(city, x, y);
-            zombies[i] = zombie;
+            zombies[i] = Zombie(city, x, y);
             city.setOrganism(&zombies[i], x, y);
         }
         else {
             i--;
             continue;
         }
+    }
+
+    for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
+        zombies[i].setCity(city);
     }
 }
 

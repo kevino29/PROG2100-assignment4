@@ -169,33 +169,6 @@ City.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/City.cpp.s
 .PHONY : City.cpp.s
 
-GameSpecs.obj: GameSpecs.cpp.obj
-
-.PHONY : GameSpecs.obj
-
-# target to build an object file
-GameSpecs.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/GameSpecs.cpp.obj
-.PHONY : GameSpecs.cpp.obj
-
-GameSpecs.i: GameSpecs.cpp.i
-
-.PHONY : GameSpecs.i
-
-# target to preprocess a source file
-GameSpecs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/GameSpecs.cpp.i
-.PHONY : GameSpecs.cpp.i
-
-GameSpecs.s: GameSpecs.cpp.s
-
-.PHONY : GameSpecs.s
-
-# target to generate assembly for a file
-GameSpecs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\assignment4.dir\build.make CMakeFiles/assignment4.dir/GameSpecs.cpp.s
-.PHONY : GameSpecs.cpp.s
-
 Human.obj: Human.cpp.obj
 
 .PHONY : Human.obj
@@ -316,9 +289,6 @@ help:
 	@echo ... City.obj
 	@echo ... City.i
 	@echo ... City.s
-	@echo ... GameSpecs.obj
-	@echo ... GameSpecs.i
-	@echo ... GameSpecs.s
 	@echo ... Human.obj
 	@echo ... Human.i
 	@echo ... Human.s

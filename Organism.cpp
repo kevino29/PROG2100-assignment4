@@ -8,7 +8,7 @@ using namespace std;
 
 Organism::Organism() {}
 
-Organism::Organism(City city, int width, int height) {
+Organism::Organism(City& city, int width, int height) {
     this->city = city;
     this->width = width;
     this->height = height;
@@ -30,6 +30,10 @@ int Organism::getY() const {
 
 void Organism::setY(int mY) {
     this->y = mY;
+}
+
+void Organism::setCity(City &mCity) {
+    this->city = mCity;
 }
 
 int Organism::getRandomInt(int min, int max) {

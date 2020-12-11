@@ -11,7 +11,7 @@ Human::Human() {
     this->species = "Human";
 }
 
-Human::Human(City city, int x, int y) {
+Human::Human(City& city, int x, int y) {
     this->species = "Human";
     this->city = city;
     this->x = x;

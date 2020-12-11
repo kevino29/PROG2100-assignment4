@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/assignment4.dir/City.cpp.obj"
-  "CMakeFiles/assignment4.dir/GameSpecs.cpp.obj"
   "CMakeFiles/assignment4.dir/Human.cpp.obj"
   "CMakeFiles/assignment4.dir/Organism.cpp.obj"
   "CMakeFiles/assignment4.dir/Zombie.cpp.obj"
