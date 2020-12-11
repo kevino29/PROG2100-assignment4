@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <ctime>
 #include "Organism.h"
 #include "Human.h"
 #include "Zombie.h"
@@ -67,6 +68,8 @@ int main() {
     City city;
     Human humans[HUMAN_STARTCOUNT];
     Zombie zombies[ZOMBIE_STARTCOUNT];
+
+    srand((unsigned) time(0));
 
     initializeHumans(city, humans);
     initializeZombies(city, zombies);

@@ -52,14 +52,14 @@ ostream& operator<<(ostream& output, City& city) {
                 if (city.grid[i][k] != nullptr) {
                     if ((city.grid[i][k])->getSpecies() == "Human") {
                         SetConsoleTextAttribute(hConsole, HUMAN_COLOR);
-                        output << "O"; // Human
+                        output << (char)HUMAN_CH;
                     } else {
                         SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
-                        output << "X"; // Zombie
+                        output << (char)ZOMBIE_CH;
                     }
                 }
                 else
-                    output << " ";
+                    output << (char)SPACE_CH;
 
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
@@ -71,14 +71,14 @@ ostream& operator<<(ostream& output, City& city) {
                 if (city.grid[i][k] != nullptr) {
                     if (city.grid[i][k]->getSpecies() == "Human") {
                         SetConsoleTextAttribute(hConsole, HUMAN_COLOR);
-                        output << "O"; // Human
+                        output << (char)HUMAN_CH;
                     } else {
                         SetConsoleTextAttribute(hConsole, ZOMBIE_COLOR);
-                        output << "X"; // Zombie
+                        output << (char)ZOMBIE_CH;
                     }
                 }
                 else
-                    output << " ";
+                    output << (char)SPACE_CH;
 
                 SetConsoleTextAttribute(hConsole, GRID_COLOR);
                 output << " |";
