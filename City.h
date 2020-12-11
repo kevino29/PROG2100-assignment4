@@ -5,6 +5,7 @@
 #ifndef ASSIGNMENT4_CITY_H
 #define ASSIGNMENT4_CITY_H
 
+#include <string>
 #include <iostream>
 
 using namespace std;
