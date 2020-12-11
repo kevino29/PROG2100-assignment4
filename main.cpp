@@ -10,11 +10,6 @@
 using namespace std;
 
 int generateRandomInt(int max) {
-//    random_device dev;
-//    mt19937 rng(dev());
-//    uniform_int_distribution<mt19937::result_type> distribution(min, max);
-//    return distribution(rng);
-
     return rand() % max;
 }
 
@@ -69,12 +64,17 @@ int main() {
     Human humans[HUMAN_STARTCOUNT];
     Zombie zombies[ZOMBIE_STARTCOUNT];
 
+    // To randomize each new run
     srand((unsigned) time(0));
 
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    cout << city;
+    for (int i = 0; i < 10; i++) {
+        zombies[0].move();
+    }
+
+//    cout << city;
 
     return 0;
 }

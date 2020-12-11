@@ -37,15 +37,22 @@ void Zombie::move() {
 
     switch(dir) {
         case WEST:
+            cout << "WEST" << endl;
             break;
         case NORTH:
+            cout << "NORTH" << endl;
             break;
         case EAST:
+            cout << "EAST" << endl;
             break;
         case SOUTH:
+            cout << "SOUTH" << endl;
+            break;
+        case NUM_DIRECTIONS:
             break;
     }
 }
 
 void Zombie::convert(Organism& organism) {
+
 }
