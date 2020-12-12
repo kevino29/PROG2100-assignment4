@@ -36,6 +36,7 @@ void Zombie::spawn() {
 }
 
 void Zombie::move() {
+    Organism *organism = nullptr;
     while (!moved) {
         auto dir = static_cast<direction>(rand() % NUM_DIRECTIONS);
 
@@ -44,6 +45,7 @@ void Zombie::move() {
                 cout << "WEST" << endl;
                 if (x != 0) {
                     if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
+                        this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
                         moved = true;
                     }
@@ -53,6 +55,7 @@ void Zombie::move() {
                 cout << "NORTH" << endl;
                 if (y != 0) {
                     if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
+                        this->city->setOrganism(*organism, this->x, this->y);
                         this->y -= 1;
                         moved = true;
                     }
@@ -62,6 +65,7 @@ void Zombie::move() {
                 cout << "EAST" << endl;
                 if (x != (GRID_WIDTH - 1)) {
                     if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
+                        this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
                         moved = true;
                     }
@@ -71,6 +75,7 @@ void Zombie::move() {
                 cout << "SOUTH" << endl;
                 if (y != GRID_HEIGHT - 1) {
                     if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
+                        this->city->setOrganism(*organism, this->x, this->y);
                         this->y += 1;
                         moved = true;
                     }
