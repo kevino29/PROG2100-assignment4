@@ -24,7 +24,8 @@ protected:
     bool moved;
     City* city;
 
-    enum direction {WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS};
+    enum cardinal_direction {WEST, NORTH, EAST, SOUTH, NUM_CARDINAL_DIRECTIONS};
+    enum ordinal_direction {NORTHWEST, NORTHEAST, SOUTHEAST, SOUTHWEST, NUM_ORDINAL_DIRECTIONS};
 
 public:
     Organism();

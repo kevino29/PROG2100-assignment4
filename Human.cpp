@@ -37,7 +37,7 @@ void Human::spawn() {
 void Human::move() {
     Organism *organism = nullptr;
     while (!moved) {
-        auto dir = static_cast<direction>(rand() % NUM_DIRECTIONS);
+        auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);
 
         switch(dir) {
             case WEST:
@@ -76,7 +76,7 @@ void Human::move() {
                     }
                 }
                 break;
-            case NUM_DIRECTIONS:
+            case NUM_CARDINAL_DIRECTIONS:
                 break;
         }
         if (moved)
