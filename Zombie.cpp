@@ -42,7 +42,6 @@ void Zombie::move() {
 
         switch(dir) {
             case WEST:
-                cout << "WEST" << endl;
                 if (x != 0) {
                     if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
                         this->city->setOrganism(*organism, this->x, this->y);
@@ -52,7 +51,6 @@ void Zombie::move() {
                 }
                 break;
             case NORTH:
-                cout << "NORTH" << endl;
                 if (y != 0) {
                     if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
                         this->city->setOrganism(*organism, this->x, this->y);
@@ -62,7 +60,6 @@ void Zombie::move() {
                 }
                 break;
             case EAST:
-                cout << "EAST" << endl;
                 if (x != (GRID_WIDTH - 1)) {
                     if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
                         this->city->setOrganism(*organism, this->x, this->y);
@@ -72,7 +69,6 @@ void Zombie::move() {
                 }
                 break;
             case SOUTH:
-                cout << "SOUTH" << endl;
                 if (y != GRID_HEIGHT - 1) {
                     if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
                         this->city->setOrganism(*organism, this->x, this->y);

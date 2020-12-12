@@ -59,6 +59,16 @@ void initializeZombies(City& city, Zombie zombies[]) {
     }
 }
 
+void moveEveryone(Human humans[], Zombie zombies[]) {
+    for (int i = 0; i < ZOMBIE_STARTCOUNT; i++) {
+        zombies[i].move();
+    }
+
+    for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
+        humans[i].move();
+    }
+}
+
 int main() {
     City city;
     Human humans[HUMAN_STARTCOUNT];
@@ -70,9 +80,10 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    for (int i = 0; i < 2; i++) {
+    cout << city;
+    for (int i = 0; i < 5; i++) {
+        moveEveryone(humans, zombies);
         cout << city;
-        zombies[0].move();
     }
 
 //    cout << city;
