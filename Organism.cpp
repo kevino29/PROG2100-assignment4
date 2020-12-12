@@ -9,7 +9,7 @@ using namespace std;
 Organism::Organism() {}
 
 Organism::Organism(City& city, int width, int height) {
-    this->city = city;
+    this->city = &city;
     this->width = width;
     this->height = height;
 }
@@ -32,7 +32,7 @@ void Organism::setY(int mY) {
     this->y = mY;
 }
 
-void Organism::setCity(City &mCity) {
+void Organism::setCity(City *mCity) {
     this->city = mCity;
 }
 

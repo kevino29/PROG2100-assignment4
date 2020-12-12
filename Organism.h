@@ -22,7 +22,7 @@ protected:
     int width;
     int height;
     bool moved;
-    City city;
+    City* city;
 
     enum direction {WEST, NORTH, EAST, SOUTH, NUM_DIRECTIONS};
 
@@ -40,7 +40,7 @@ public:
     void setY(int y);
     int getX() const;
     int getY() const;
-    void setCity(City& mCity);
+    void setCity(City* mCity);
 
     int getRandomInt(int min, int max);
     bool isTurn();

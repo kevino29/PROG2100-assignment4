@@ -23,7 +23,7 @@ void initializeHumans(City& city, Human humans[]) {
 
         if (city.getOrganism(x, y) == nullptr) {
             humans[i] = Human(city, x, y);
-            city.setOrganism(&humans[i], x, y);
+            city.setOrganism(humans[i], x, y);
         }
         else {
             i--;
@@ -32,7 +32,7 @@ void initializeHumans(City& city, Human humans[]) {
     }
 
     for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
-        humans[i].setCity(city);
+        humans[i].setCity(&city);
     }
 }
 
@@ -46,7 +46,7 @@ void initializeZombies(City& city, Zombie zombies[]) {
 
         if (city.getOrganism(x, y) == nullptr) {
             zombies[i] = Zombie(city, x, y);
-            city.setOrganism(&zombies[i], x, y);
+            city.setOrganism(zombies[i], x, y);
         }
         else {
             i--;
@@ -54,8 +54,8 @@ void initializeZombies(City& city, Zombie zombies[]) {
         }
     }
 
-    for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
-        zombies[i].setCity(city);
+    for (int i = 0; i < ZOMBIE_STARTCOUNT; i++) {
+        zombies[i].setCity(&city);
     }
 }
 
@@ -70,7 +70,8 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 2; i++) {
+        cout << city;
         zombies[0].move();
     }
 

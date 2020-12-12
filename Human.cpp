@@ -9,13 +9,15 @@ using namespace std;
 
 Human::Human() {
     this->species = "Human";
+    this->moved = false;
 }
 
 Human::Human(City& city, int x, int y) {
     this->species = "Human";
-    this->city = city;
+    this->city = &city;
     this->x = x;
     this->y = y;
+    this->moved = false;
 }
 
 Human::~Human() = default;

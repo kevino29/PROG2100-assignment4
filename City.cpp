@@ -20,8 +20,8 @@ Organism* City::getOrganism(int x, int y) {
     return grid[x][y];
 }
 
-void City::setOrganism(Organism *organism, int x, int y) {
-    this->grid[x][y] = organism;
+void City::setOrganism(Organism& organism, int x, int y) {
+    this->grid[x][y] = &organism;
 }
 
 void City::move() {
