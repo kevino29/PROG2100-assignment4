@@ -70,6 +70,9 @@ void moveEveryone(Human humans[], Zombie zombies[]) {
 }
 
 int main() {
+    int iteration = 1;
+    double this_time_d;
+
     City city;
     Human humans[HUMAN_STARTCOUNT];
     Zombie zombies[ZOMBIE_STARTCOUNT];
@@ -80,24 +83,18 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    int iteration = 1;
-    double this_time_d;
+    cout << "Iteration: " << iteration << endl;
+    cout << city << endl;
 
     while (iteration <= ITERATIONS) {
         this_time_d = (double)clock()/CLOCKS_PER_SEC;
         if (this_time_d >= PAUSE_SECONDS * iteration) {
-            cout << (float)clock()/CLOCKS_PER_SEC << endl;
+            moveEveryone(humans, zombies);
+            cout << "Iteration: " << iteration << endl << city << endl;
             iteration++;
         }
     }
 
-    cout << city;
-    for (int i = 0; i < 10; i++) {
-        moveEveryone(humans, zombies);
-        cout << city;
-    }
-
-//    cout << city;
 
     return 0;
 }

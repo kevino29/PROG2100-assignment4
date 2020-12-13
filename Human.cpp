@@ -35,54 +35,53 @@ void Human::spawn() {
 }
 
 void Human::move() {
+    auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);
     Organism *organism = nullptr;
-    while (!moved) {
-        auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);
 
-        switch(dir) {
-            case WEST:
-                if (x != 0) {
-                    if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
-                        this->city->setOrganism(*organism, this->x, this->y);
-                        this->x -= 1;
-                        moved = true;
-                    }
+    switch(dir) {
+        case WEST:
+            if (x != 0) {
+                if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
+                    this->city->setOrganism(*organism, this->x, this->y);
+                    this->x -= 1;
+                    moved = true;
                 }
-                break;
-            case NORTH:
-                if (y != 0) {
-                    if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
-                        this->city->setOrganism(*organism, this->x, this->y);
-                        this->y -= 1;
-                        moved = true;
-                    }
+            }
+            break;
+        case NORTH:
+            if (y != 0) {
+                if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
+                    this->city->setOrganism(*organism, this->x, this->y);
+                    this->y -= 1;
+                    moved = true;
                 }
-                break;
-            case EAST:
-                if (x != (GRID_WIDTH - 1)) {
-                    if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
-                        this->city->setOrganism(*organism, this->x, this->y);
-                        this->x += 1;
-                        moved = true;
-                    }
+            }
+            break;
+        case EAST:
+            if (x != (GRID_WIDTH - 1)) {
+                if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
+                    this->city->setOrganism(*organism, this->x, this->y);
+                    this->x += 1;
+                    moved = true;
                 }
-                break;
-            case SOUTH:
-                if (y != GRID_HEIGHT - 1) {
-                    if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
-                        this->city->setOrganism(*organism, this->x, this->y);
-                        this->y += 1;
-                        moved = true;
-                    }
+            }
+            break;
+        case SOUTH:
+            if (y != GRID_HEIGHT - 1) {
+                if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
+                    this->city->setOrganism(*organism, this->x, this->y);
+                    this->y += 1;
+                    moved = true;
                 }
-                break;
-            case NUM_CARDINAL_DIRECTIONS:
-                break;
-        }
-        if (moved)
-            this->city->setOrganism((Organism &) *this, this->x, this->y);
+            }
+            break;
+        case NUM_CARDINAL_DIRECTIONS:
+            break;
     }
-    moved = false;
+    if (moved) {
+        this->city->setOrganism((Organism &) *this, this->x, this->y);
+        moved = false;
+    }
 }
 
 void Human::recruit() {
