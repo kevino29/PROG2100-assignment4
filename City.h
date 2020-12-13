@@ -7,18 +7,19 @@
 
 #include <string>
 #include <iostream>
+#include "GameSpecs.h"
 
 using namespace std;
 
 class Organism;
 
-const int GRID_WIDTH = 20;
-const int GRID_HEIGHT = 20;
+const int GRID_WIDTH = GRIDSIZE;
+const int GRID_HEIGHT = GRIDSIZE;
 
 class City
 {
 protected:
-    Organism *grid[GRID_WIDTH][GRID_HEIGHT] = {nullptr};
+    Organism *grid[GRIDSIZE][GRIDSIZE] = {nullptr};
 
 public:
     City();

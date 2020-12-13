@@ -19,8 +19,6 @@ protected:
     string species;
     int x;
     int y;
-    int width;
-    int height;
     bool moved;
     City* city;
 

@@ -8,13 +8,17 @@ using namespace std;
 
 Organism::Organism() {}
 
-Organism::Organism(City& city, int width, int height) {
+Organism::Organism(City& city, int x, int y) {
     this->city = &city;
-    this->width = width;
-    this->height = height;
+    this->x = x;
+    this->y = y;
 }
 
 Organism::~Organism() = default;
+
+//string Organism::getSpecies() {
+//    return this->species;
+//}
 
 int Organism::getX() const {
     return this->x;

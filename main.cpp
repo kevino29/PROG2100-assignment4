@@ -80,8 +80,19 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
+    int iteration = 1;
+    double this_time_d;
+
+    while (iteration <= ITERATIONS) {
+        this_time_d = (double)clock()/CLOCKS_PER_SEC;
+        if (this_time_d >= PAUSE_SECONDS * iteration) {
+            cout << (float)clock()/CLOCKS_PER_SEC << endl;
+            iteration++;
+        }
+    }
+
     cout << city;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {
         moveEveryone(humans, zombies);
         cout << city;
     }
