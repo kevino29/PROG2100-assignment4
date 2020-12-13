@@ -4,7 +4,6 @@
 
 #include <string>
 #include "Zombie.h"
-#include "Human.h"
 
 using namespace std;
 
@@ -31,9 +30,7 @@ string Zombie::getSpecies() {
     return this->species;
 }
 
-void Zombie::spawn() {
-
-}
+void Zombie::spawn() {}
 
 void Zombie::move() {
     Organism *organism = nullptr;
@@ -44,7 +41,8 @@ void Zombie::move() {
         switch(dir) {
             case WEST:
                 if (x != 0) {
-                    if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
+                    if (this->city->getOrganism(this->x - 1, this->y) == nullptr ||
+                        this->city->getOrganism(this->x - 1, this->y)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
                         moved = true;
@@ -53,7 +51,8 @@ void Zombie::move() {
                 break;
             case NORTH:
                 if (y != 0) {
-                    if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
+                    if (this->city->getOrganism(this->x, this->y - 1) == nullptr ||
+                        this->city->getOrganism(this->x, this->y - 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->y -= 1;
                         moved = true;
@@ -62,7 +61,8 @@ void Zombie::move() {
                 break;
             case EAST:
                 if (x != (GRID_WIDTH - 1)) {
-                    if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
+                    if (this->city->getOrganism(this->x + 1, this->y) == nullptr ||
+                        this->city->getOrganism(this->x + 1, this->y)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
                         moved = true;
@@ -71,7 +71,8 @@ void Zombie::move() {
                 break;
             case SOUTH:
                 if (y != GRID_HEIGHT - 1) {
-                    if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
+                    if (this->city->getOrganism(this->x, this->y + 1) == nullptr ||
+                        this->city->getOrganism(this->x, this->y + 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->y += 1;
                         moved = true;
@@ -87,8 +88,9 @@ void Zombie::move() {
 
         switch(dir) {
             case NORTHWEST:
-                if (x != 0) {
-                    if (this->city->getOrganism(this->x - 1, this->y - 1) == nullptr) {
+                if (y != 0 && x != 0) {
+                    if (this->city->getOrganism(this->x - 1, this->y - 1) == nullptr ||
+                        this->city->getOrganism(this->x - 1, this->y - 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
                         this->y -= 1;
@@ -97,8 +99,9 @@ void Zombie::move() {
                 }
                 break;
             case NORTHEAST:
-                if (y != 0) {
-                    if (this->city->getOrganism(this->x + 1, this->y - 1) == nullptr) {
+                if (y != 0 && x != (GRID_WIDTH - 1)) {
+                    if (this->city->getOrganism(this->x + 1, this->y - 1) == nullptr ||
+                        this->city->getOrganism(this->x + 1, this->y - 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
                         this->y -= 1;
@@ -107,8 +110,9 @@ void Zombie::move() {
                 }
                 break;
             case SOUTHEAST:
-                if (x != (GRID_WIDTH - 1)) {
-                    if (this->city->getOrganism(this->x + 1, this->y + 1) == nullptr) {
+                if (y != (GRID_HEIGHT - 1) && x != (GRID_WIDTH - 1)) {
+                    if (this->city->getOrganism(this->x + 1, this->y + 1) == nullptr ||
+                        this->city->getOrganism(this->x + 1, this->y + 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
                         this->y += 1;
@@ -117,8 +121,9 @@ void Zombie::move() {
                 }
                 break;
             case SOUTHWEST:
-                if (y != GRID_HEIGHT - 1) {
-                    if (this->city->getOrganism(this->x-1, this->y + 1) == nullptr) {
+                if (x != 0 && y != GRID_HEIGHT - 1) {
+                    if (this->city->getOrganism(this->x - 1, this->y + 1) == nullptr ||
+                        this->city->getOrganism(this->x - 1, this->y + 1)->getSpecies() == "Human") {
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
                         this->y += 1;
@@ -136,6 +141,6 @@ void Zombie::move() {
     }
 }
 
-void Zombie::convert(Organism& organism) {
+void Zombie::convert() {
 
 }

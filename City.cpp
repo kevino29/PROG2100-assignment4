@@ -5,6 +5,8 @@
 #include <string>
 #include <windows.h>
 #include "Organism.h"
+#include "Human.h"
+#include "Zombie.h"
 #include "City.h"
 #include "GameSpecs.h"
 
@@ -22,10 +24,6 @@ Organism* City::getOrganism(int x, int y) {
 
 void City::setOrganism(Organism& organism, int x, int y) {
     this->grid[x][y] = &organism;
-}
-
-void City::move() {
-
 }
 
 ostream& operator<<(ostream& output, City& city) {
@@ -97,5 +95,6 @@ ostream& operator<<(ostream& output, City& city) {
             output << endl;
         }
     }
+    SetConsoleTextAttribute(hConsole, DEFAULT_COLOR);
     return output;
 }

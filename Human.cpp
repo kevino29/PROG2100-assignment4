@@ -30,9 +30,7 @@ string Human::getSpecies() {
     return this->species;
 }
 
-void Human::spawn() {
-
-}
+void Human::spawn() {}
 
 void Human::move() {
     auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);

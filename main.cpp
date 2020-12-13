@@ -1,6 +1,9 @@
 #include <iostream>
+#include <cstdlib>
 #include <random>
 #include <ctime>
+#include <windows.h>
+#include <conio.h>
 #include "Organism.h"
 #include "Human.h"
 #include "Zombie.h"
@@ -83,18 +86,15 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    cout << "Iteration: " << iteration << endl;
-    cout << city << endl;
+    cout << "Iteration: " << iteration << endl << city << endl;
 
-    while (iteration <= ITERATIONS) {
+    while (iteration < ITERATIONS) {
         this_time_d = (double)clock()/CLOCKS_PER_SEC;
         if (this_time_d >= PAUSE_SECONDS * iteration) {
             moveEveryone(humans, zombies);
-            cout << "Iteration: " << iteration << endl << city << endl;
-            iteration++;
+            cout << "Iteration: " << ++iteration << endl << city << endl << flush;
         }
     }
-
 
     return 0;
 }

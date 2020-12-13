@@ -25,13 +25,10 @@ public:
     City();
     virtual ~City();
 
-    Organism *getOrganism( int x, int y );
+    Organism* getOrganism( int x, int y );
     void setOrganism(Organism& organism, int x, int y);
 
-    void move();
-
-    friend ostream& operator<<( ostream &output, City &city );
-
+    friend ostream& operator<<(ostream& output, City& city);
 };
 
 #endif //ASSIGNMENT4_CITY_H
