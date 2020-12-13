@@ -19,6 +19,7 @@ protected:
     string species;
     int x;
     int y;
+    int turns;
     bool moved;
     City* city;
 
@@ -37,8 +38,10 @@ public:
     virtual string getSpecies() = 0;
     void setX(int x);
     void setY(int y);
+    void setTurns(int mTurns);
     int getX() const;
     int getY() const;
+    int getTurns() const;
     void setCity(City* mCity);
 
     int getRandomInt(int min, int max);

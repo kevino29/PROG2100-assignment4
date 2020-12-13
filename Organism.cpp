@@ -36,6 +36,14 @@ void Organism::setY(int mY) {
     this->y = mY;
 }
 
+int Organism::getTurns() const {
+    return this->turns;
+}
+
+void Organism::setTurns(int mTurns) {
+    this->turns = mTurns;
+}
+
 void Organism::setCity(City *mCity) {
     this->city = mCity;
 }
