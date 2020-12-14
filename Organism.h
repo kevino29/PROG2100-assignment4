@@ -31,7 +31,6 @@ public:
     Organism(City& city, int width, int height);
     virtual ~Organism();
 
-    virtual void spawn() = 0;
     virtual void move() = 0;
 
     virtual void setSpecies(string species) = 0;

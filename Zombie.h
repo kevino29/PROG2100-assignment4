@@ -18,7 +18,6 @@ public:
     void setSpecies(string species) override;
     string getSpecies() override;
 
-    void spawn() override;
     void move() override;
     void convert();
 };

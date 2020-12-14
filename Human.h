@@ -10,6 +10,10 @@
 
 class Human : public Organism
 {
+private:
+    int recruitCountdown;
+    bool isRecruiting;
+
 public:
     Human();
     Human(City& city, int x, int y );
@@ -17,10 +21,13 @@ public:
 
     void setSpecies(string species) override;
     string getSpecies() override;
+    int getRecruitCountdown() const;
+    void setRecruitCountdown(int recruitCountdown);
+    bool isRecruiting1() const;
+    void setIsRecruiting(bool isRecruiting);
 
-    void spawn() override;
     void move() override;
-    void recruit();
+    string recruit();
 };
 
 #endif //ASSIGNMENT4_HUMAN_H

@@ -30,8 +30,6 @@ string Zombie::getSpecies() {
     return this->species;
 }
 
-void Zombie::spawn() {}
-
 void Zombie::move() {
     Organism *organism = nullptr;
 
