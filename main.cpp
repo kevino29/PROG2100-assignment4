@@ -208,7 +208,7 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    cout << "Steps: "
+    cout << "Time Steps: "
          << iteration++ << "        "
          << "Humans: " << city.getHumanCount() << "      "
          << "Zombies: " << city.getZombieCount() << endl
@@ -221,13 +221,21 @@ int main() {
             checkHumanRecruits(city, recruitedHumans, humansRecruited);
             checkZombieConverts(city, convertedZombies, humansConverted);
             checkZombieStarvation(city, starvedZombies, zombiesStarved);
-            cout << "Steps: "
+            cout << "Time Steps: "
                  << iteration++ << "        "
                  << "Humans: " << city.getHumanCount() << "      "
                  << "Zombies: " << city.getZombieCount() << endl
                  << city << endl << flush;
         }
-    }
 
+        if (city.getHumanCount() == 0) {
+            cout << "The Humans have gone extinct!" << endl;
+            break;
+        }
+        else if (city.getZombieCount() == 0) {
+            cout << "The Zombies have gone extinct!" << endl;
+            break;
+        }
+    }
     return 0;
 }

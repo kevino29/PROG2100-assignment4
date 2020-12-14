@@ -5,9 +5,9 @@
 #ifndef _GAMESPECS_H
 #define _GAMESPECS_H
 
-const int GRIDSIZE = 10; // size of the square grid
-const int HUMAN_STARTCOUNT = 1; // initial Humans
-const int ZOMBIE_STARTCOUNT = 1; //initial Zombie count
+const int GRIDSIZE = 20; // size of the square grid
+const int HUMAN_STARTCOUNT = 100; // initial Humans
+const int ZOMBIE_STARTCOUNT = 5; //initial Zombie count
 const int HUMAN_BREED = 3; // steps until a Human breeds
 const int ZOMBIE_BREED = 8; // steps until a Zombie breeds
 const int ZOMBIE_STARVE = 3; // steps until a Zombie starves and converts back
