@@ -11,6 +11,7 @@
 class Zombie : public Organism
 {
 private:
+    int eatCooldown;
     int convertCooldown;
     bool isConverting;
 
