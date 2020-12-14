@@ -113,40 +113,42 @@ string Human::recruit() {
     recruitCountdown = HUMAN_BREED;
     isRecruiting = true;
 
-    while (true) {
-        auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);
+    auto dir = static_cast<cardinal_direction>(rand() % NUM_CARDINAL_DIRECTIONS);
 
-        switch (dir) {
-            case NORTH:
-                if (y != 0) {
-                    if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
-                        return "NORTH";
-                    }
+    switch (dir) {
+        case NORTH:
+            if (y != 0) {
+                if (this->city->getOrganism(this->x, this->y - 1) == nullptr) {
+                    return "NORTH";
                 }
-                break;
-            case SOUTH:
-                if (y != GRID_HEIGHT - 1) {
-                    if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
-                        return "SOUTH";
-                    }
+            }
+            break;
+        case SOUTH:
+            if (y != GRID_HEIGHT - 1) {
+                if (this->city->getOrganism(this->x, this->y + 1) == nullptr) {
+                    return "SOUTH";
                 }
-                break;
-            case EAST:
-                if (x != (GRID_WIDTH - 1)) {
-                    if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
-                        return "EAST";
-                    }
+            }
+            break;
+        case EAST:
+            if (x != (GRID_WIDTH - 1)) {
+                if (this->city->getOrganism(this->x + 1, this->y) == nullptr) {
+                    return "EAST";
                 }
-                break;
-            case WEST:
-                if (x != 0) {
-                    if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
-                        return "WEST";
-                    }
+            }
+            break;
+        case WEST:
+            if (x != 0) {
+                if (this->city->getOrganism(this->x - 1, this->y) == nullptr) {
+                    return "WEST";
                 }
-                break;
-            case NUM_CARDINAL_DIRECTIONS:
-                break;
-        }
+            }
+            break;
+        case NUM_CARDINAL_DIRECTIONS:
+            break;
     }
+
+    recruitCountdown = 0;
+    isRecruiting = false;
+    return "NONE";
 }

@@ -108,6 +108,69 @@ void checkHumanRecruits(City& city, Human recruitedHumans[], int humansRecruited
                         recruitedHumans[humansRecruited] = Human(city, i - 1, j);
                         city.setOrganism(recruitedHumans[humansRecruited++], i - 1, j);
                     }
+                    else {
+                        // NO HUMANS WERE RECRUITED
+                    }
+                }
+            }
+        }
+    }
+}
+
+void checkZombieConverts(City& city, Zombie convertedZombies[], int convertedHumans) {
+    for (int i = 0; i < GRIDSIZE; i++) {
+        for (int j = 0; j < GRIDSIZE; j++) {
+            if (city.getOrganism(i, j) != nullptr) {
+                if (city.getOrganism(i, j)->getSpecies() == "Zombie" &&
+                    ((Zombie*) city.getOrganism(i, j))->isConverting1()) {
+                    string dir = ((Zombie*)city.getOrganism(i, j))->convert();
+                    Organism* organism = nullptr;
+                    cout << "Zombie at " << i << " " << j << " is converting the human to the ";
+                    cout << dir << "!" << endl;
+
+                    if (dir == "NORTH") {
+                        convertedZombies[convertedHumans] = Zombie(city, i, j - 1);
+                        city.setOrganism(*organism, i, j - 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i, j - 1);
+                    }
+                    if (dir == "EAST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i + 1, j);
+                        city.setOrganism(*organism, i + 1, j);
+                        city.setOrganism(convertedZombies[convertedHumans++], i + 1, j);
+                    }
+                    if (dir == "SOUTH") {
+                        convertedZombies[convertedHumans] = Zombie(city, i, j + 1);
+                        city.setOrganism(*organism, i, j + 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i, j + 1);
+                    }
+                    if (dir == "WEST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i - 1, j);
+                        city.setOrganism(*organism, i - 1, j);
+                        city.setOrganism(convertedZombies[convertedHumans++], i - 1, j);
+                    }
+                    if (dir == "NORTHWEST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i - 1, j - 1);
+                        city.setOrganism(*organism, i - 1, j - 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i - 1, j - 1);
+                    }
+                    if (dir == "NORTHEAST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i + 1, j - 1);
+                        city.setOrganism(*organism, i + 1, j - 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i + 1, j - 1);
+                    }
+                    if (dir == "SOUTHEAST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i + 1, j + 1);
+                        city.setOrganism(*organism, i + 1, j + 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i + 1, j + 1);
+                    }
+                    if (dir == "SOUTHWEST") {
+                        convertedZombies[convertedHumans] = Zombie(city, i - 1, j + 1);
+                        city.setOrganism(*organism, i - 1, j + 1);
+                        city.setOrganism(convertedZombies[convertedHumans++], i - 1, j + 1);
+                    }
+                    else {
+                        // NO HUMAN WAS CONVERTED
+                    }
                 }
             }
         }
@@ -144,6 +207,7 @@ int main() {
         if (this_time_d >= PAUSE_SECONDS * iteration) {
             moveEveryone(city);
             checkHumanRecruits(city, recruitedHumans, humansRecruited);
+            checkZombieConverts(city, convertedZombies, humansConverted);
             cout << "Steps: "
                  << iteration++ << "        "
                  << "Humans: " << city.getHumanCount() << "      "

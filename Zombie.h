@@ -10,6 +10,10 @@
 
 class Zombie : public Organism
 {
+private:
+    int convertCooldown;
+    bool isConverting;
+
 public:
     Zombie();
     Zombie(City& city, int x, int y);
@@ -17,9 +21,14 @@ public:
 
     void setSpecies(string species) override;
     string getSpecies() override;
+    int getConvertCooldown() const;
+    void setConvertCooldown(int convertCooldown);
+    bool isConverting1() const;
+    void setIsConverting(bool isConverting);
 
     void move() override;
-    void convert();
+    string convert();
+    void starve();
 };
 
 #endif //ASSIGNMENT4_ZOMBIE_H
