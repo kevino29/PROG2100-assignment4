@@ -13,6 +13,7 @@ Zombie::Zombie() {
     this->eatCooldown = ZOMBIE_STARVE;
     this->convertCooldown = ZOMBIE_BREED;
     this->isConverting = false;
+    this->isStarving = false;
 }
 
 Zombie::Zombie(City& city, int x, int y) {
@@ -24,6 +25,7 @@ Zombie::Zombie(City& city, int x, int y) {
     this->eatCooldown = ZOMBIE_STARVE;
     this->convertCooldown = ZOMBIE_BREED;
     this->isConverting = false;
+    this->isStarving = false;
 }
 
 Zombie::~Zombie() = default;
@@ -34,6 +36,14 @@ void Zombie::setSpecies(string species) {
 
 string Zombie::getSpecies() {
     return this->species;
+}
+
+bool Zombie::isStarving1() const {
+    return isStarving;
+}
+
+void Zombie::setIsStarving(bool isStarving) {
+    Zombie::isStarving = isStarving;
 }
 
 int Zombie::getConvertCooldown() const {
@@ -63,7 +73,8 @@ void Zombie::move() {
                 if (x != 0) {
                     if (this->city->getOrganism(this->x - 1, this->y) == nullptr ||
                         this->city->getOrganism(this->x - 1, this->y)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x - 1, this->y)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x - 1, this->y) != nullptr &&
+                            this->city->getOrganism(this->x - 1, this->y)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
@@ -75,7 +86,8 @@ void Zombie::move() {
                 if (y != 0) {
                     if (this->city->getOrganism(this->x, this->y - 1) == nullptr ||
                         this->city->getOrganism(this->x, this->y - 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x, this->y - 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x, this->y - 1) != nullptr &&
+                            this->city->getOrganism(this->x, this->y - 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->y -= 1;
@@ -87,7 +99,8 @@ void Zombie::move() {
                 if (x != (GRID_WIDTH - 1)) {
                     if (this->city->getOrganism(this->x + 1, this->y) == nullptr ||
                         this->city->getOrganism(this->x + 1, this->y)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x + 1, this->y)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x + 1, this->y) != nullptr &&
+                            this->city->getOrganism(this->x + 1, this->y)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
@@ -99,7 +112,8 @@ void Zombie::move() {
                 if (y != GRID_HEIGHT - 1) {
                     if (this->city->getOrganism(this->x, this->y + 1) == nullptr ||
                         this->city->getOrganism(this->x, this->y + 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x, this->y + 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x, this->y + 1) != nullptr &&
+                            this->city->getOrganism(this->x, this->y + 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->y += 1;
@@ -119,7 +133,8 @@ void Zombie::move() {
                 if (y != 0 && x != 0) {
                     if (this->city->getOrganism(this->x - 1, this->y - 1) == nullptr ||
                         this->city->getOrganism(this->x - 1, this->y - 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x - 1, this->y - 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x - 1, this->y - 1) != nullptr &&
+                            this->city->getOrganism(this->x - 1, this->y - 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
@@ -132,7 +147,8 @@ void Zombie::move() {
                 if (y != 0 && x != (GRID_WIDTH - 1)) {
                     if (this->city->getOrganism(this->x + 1, this->y - 1) == nullptr ||
                         this->city->getOrganism(this->x + 1, this->y - 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x + 1, this->y - 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x + 1, this->y - 1) != nullptr &&
+                            this->city->getOrganism(this->x + 1, this->y - 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
@@ -145,7 +161,8 @@ void Zombie::move() {
                 if (y != (GRID_HEIGHT - 1) && x != (GRID_WIDTH - 1)) {
                     if (this->city->getOrganism(this->x + 1, this->y + 1) == nullptr ||
                         this->city->getOrganism(this->x + 1, this->y + 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x + 1, this->y + 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x + 1, this->y + 1) != nullptr &&
+                            this->city->getOrganism(this->x + 1, this->y + 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x += 1;
@@ -158,7 +175,8 @@ void Zombie::move() {
                 if (x != 0 && y != GRID_HEIGHT - 1) {
                     if (this->city->getOrganism(this->x - 1, this->y + 1) == nullptr ||
                         this->city->getOrganism(this->x - 1, this->y + 1)->getSpecies() == "Human") {
-                        if (this->city->getOrganism(this->x - 1, this->y + 1)->getSpecies() == "Human")
+                        if (this->city->getOrganism(this->x - 1, this->y + 1) != nullptr &&
+                            this->city->getOrganism(this->x - 1, this->y + 1)->getSpecies() == "Human")
                             eatCooldown = ZOMBIE_STARVE;
                         this->city->setOrganism(*organism, this->x, this->y);
                         this->x -= 1;
@@ -184,17 +202,14 @@ void Zombie::move() {
             isConverting = true;
         }
     }
-    else
-        convert();
 
     if (eatCooldown > 0) {
+        isStarving = false;
         eatCooldown--;
 
         if (eatCooldown == 0)
-            starve();
+            isStarving = true;
     }
-    else
-        starve();
 }
 
 string Zombie::convert() {

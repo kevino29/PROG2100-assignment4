@@ -105,8 +105,6 @@ void Human::move() {
         if (recruitCountdown == 0)
             isRecruiting = true;
     }
-    else
-        recruit();
 }
 
 string Human::recruit() {

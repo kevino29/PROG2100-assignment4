@@ -89,8 +89,6 @@ void checkHumanRecruits(City& city, Human recruitedHumans[], int humansRecruited
                 if (city.getOrganism(i, j)->getSpecies() == "Human" &&
                     ((Human*)city.getOrganism(i, j))->isRecruiting1()) {
                     string dir = ((Human*)city.getOrganism(i, j))->recruit();
-                    cout << "Human at " << i << " " << j << " is recruiting to the ";
-                    cout << dir << "!" << endl;
 
                     if (dir == "NORTH") {
                         recruitedHumans[humansRecruited] = Human(city, i, j - 1);
@@ -125,8 +123,6 @@ void checkZombieConverts(City& city, Zombie convertedZombies[], int convertedHum
                     ((Zombie*) city.getOrganism(i, j))->isConverting1()) {
                     string dir = ((Zombie*)city.getOrganism(i, j))->convert();
                     Organism* organism = nullptr;
-                    cout << "Zombie at " << i << " " << j << " is converting the human to the ";
-                    cout << dir << "!" << endl;
 
                     if (dir == "NORTH") {
                         convertedZombies[convertedHumans] = Zombie(city, i, j - 1);
@@ -177,6 +173,20 @@ void checkZombieConverts(City& city, Zombie convertedZombies[], int convertedHum
     }
 }
 
+void checkZombieStarvation(City& city, Human starvedZombies[], int zombiesStarved) {
+    for (int i = 0; i < GRIDSIZE; i++) {
+        for (int j = 0; j < GRIDSIZE; j++) {
+            if (city.getOrganism(i, j) != nullptr) {
+                if (city.getOrganism(i, j)->getSpecies() == "Zombie" &&
+                    ((Zombie *) city.getOrganism(i, j))->isStarving1()) {
+                    starvedZombies[zombiesStarved] = Human(city, i, j);
+                    city.setOrganism(starvedZombies[zombiesStarved++], i, j);
+                }
+            }
+        }
+    }
+}
+
 int main() {
     City city;                                  //  These store the
     Human humans[HUMAN_STARTCOUNT];             //  application data
@@ -184,10 +194,12 @@ int main() {
 
     Human recruitedHumans[GRIDSIZE*GRIDSIZE];
     Zombie convertedZombies[GRIDSIZE*GRIDSIZE];
+    Human starvedZombies[GRIDSIZE*GRIDSIZE];
 
     int iteration = 0;
     int humansRecruited = 0;
     int humansConverted = 0;
+    int zombiesStarved = 0;
     double this_time_d;
 
     // To randomize each new run
@@ -208,6 +220,7 @@ int main() {
             moveEveryone(city);
             checkHumanRecruits(city, recruitedHumans, humansRecruited);
             checkZombieConverts(city, convertedZombies, humansConverted);
+            checkZombieStarvation(city, starvedZombies, zombiesStarved);
             cout << "Steps: "
                  << iteration++ << "        "
                  << "Humans: " << city.getHumanCount() << "      "
