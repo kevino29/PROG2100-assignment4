@@ -4,9 +4,7 @@
 CMakeFiles/assignment4.dir/City.cpp.obj: ../City.cpp
 CMakeFiles/assignment4.dir/City.cpp.obj: ../City.h
 CMakeFiles/assignment4.dir/City.cpp.obj: ../GameSpecs.h
-CMakeFiles/assignment4.dir/City.cpp.obj: ../Human.h
 CMakeFiles/assignment4.dir/City.cpp.obj: ../Organism.h
-CMakeFiles/assignment4.dir/City.cpp.obj: ../Zombie.h
 
 CMakeFiles/assignment4.dir/Human.cpp.obj: ../City.h
 CMakeFiles/assignment4.dir/Human.cpp.obj: ../GameSpecs.h

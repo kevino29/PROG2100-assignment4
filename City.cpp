@@ -5,10 +5,6 @@
 #include <string>
 #include <windows.h>
 #include "Organism.h"
-#include "Human.h"
-#include "Zombie.h"
-#include "City.h"
-#include "GameSpecs.h"
 
 using namespace std;
 
@@ -17,6 +13,40 @@ City::City() {
 }
 
 City::~City() = default;
+
+int City::getHumanCount() {
+    humanCount = 0;
+    for (auto & i : this->grid) {
+        for (auto & j : i) {
+            if (j != nullptr) {
+                if (j->getSpecies() == "Human")
+                    humanCount++;
+            }
+        }
+    }
+    return humanCount;
+}
+
+void City::setHumanCount(int humanCount) {
+    City::humanCount = humanCount;
+}
+
+int City::getZombieCount() {
+    zombieCount = 0;
+    for (auto & i : this->grid) {
+        for (auto & j : i) {
+            if (j != nullptr) {
+                if (j->getSpecies() == "Zombie")
+                    zombieCount++;
+            }
+        }
+    }
+    return zombieCount;
+}
+
+void City::setZombieCount(int zombieCount) {
+    City::zombieCount = zombieCount;
+}
 
 Organism* City::getOrganism(int x, int y) {
     return grid[x][y];

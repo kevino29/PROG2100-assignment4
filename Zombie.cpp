@@ -13,7 +13,7 @@ Zombie::Zombie() {
 }
 
 Zombie::Zombie(City& city, int x, int y) {
-    this->species = "Zombies";
+    this->species = "Zombie";
     this->city = &city;
     this->x = x;
     this->y = y;

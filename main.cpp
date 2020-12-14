@@ -62,13 +62,13 @@ void initializeZombies(City& city, Zombie zombies[]) {
     }
 }
 
-void moveEveryone(Human humans[], Zombie zombies[]) {
-    for (int i = 0; i < ZOMBIE_STARTCOUNT; i++) {
-        zombies[i].move();
-    }
-
-    for (int i = 0; i < HUMAN_STARTCOUNT; i++) {
-        humans[i].move();
+void moveEveryone(City& city) {
+    for (int i = 0; i < GRIDSIZE; i++) {
+        for (int j = 0; j < GRIDSIZE; j++) {
+            if (city.getOrganism(i, j) != nullptr) {
+                city.getOrganism(i, j)->move();
+            }
+        }
     }
 }
 
@@ -86,13 +86,21 @@ int main() {
     initializeHumans(city, humans);
     initializeZombies(city, zombies);
 
-    cout << "Iteration: " << iteration << endl << city << endl;
+    cout << "Iteration: "
+         << ++iteration << "        "
+         << "Humans: " << city.getHumanCount() << "      "
+         << "Zombies: " << city.getZombieCount() << endl
+         << city << endl << flush;
 
     while (iteration < ITERATIONS) {
         this_time_d = (double)clock()/CLOCKS_PER_SEC;
         if (this_time_d >= PAUSE_SECONDS * iteration) {
-            moveEveryone(humans, zombies);
-            cout << "Iteration: " << ++iteration << endl << city << endl << flush;
+            moveEveryone(city);
+            cout << "Steps: "
+                 << ++iteration << "        "
+                 << "Humans: " << city.getHumanCount() << "      "
+                 << "Zombies: " << city.getZombieCount() << endl
+                 << city << endl << flush;
         }
     }
 
