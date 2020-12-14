@@ -42,24 +42,8 @@ bool Zombie::isStarving1() const {
     return isStarving;
 }
 
-void Zombie::setIsStarving(bool isStarving) {
-    Zombie::isStarving = isStarving;
-}
-
-int Zombie::getConvertCooldown() const {
-    return convertCooldown;
-}
-
-void Zombie::setConvertCooldown(int convertCooldown) {
-    Zombie::convertCooldown = convertCooldown;
-}
-
 bool Zombie::isConverting1() const {
     return isConverting;
-}
-
-void Zombie::setIsConverting(bool isConverting) {
-    Zombie::isConverting = isConverting;
 }
 
 void Zombie::move() {
@@ -276,8 +260,4 @@ string Zombie::convert() {
     convertCooldown = 0;
     isConverting = false;
     return "NONE";
-}
-
-void Zombie::starve() {
-
 }

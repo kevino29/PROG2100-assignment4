@@ -21,10 +21,7 @@ public:
 
     void setSpecies(string species) override;
     string getSpecies() override;
-    int getRecruitCountdown() const;
-    void setRecruitCountdown(int recruitCountdown);
     bool isRecruiting1() const;
-    void setIsRecruiting(bool isRecruiting);
 
     void move() override;
     string recruit();

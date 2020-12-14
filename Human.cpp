@@ -34,20 +34,8 @@ string Human::getSpecies() {
     return this->species;
 }
 
-int Human::getRecruitCountdown() const {
-    return recruitCountdown;
-}
-
-void Human::setRecruitCountdown(int recruitCountdown) {
-    Human::recruitCountdown = recruitCountdown;
-}
-
 bool Human::isRecruiting1() const {
     return isRecruiting;
-}
-
-void Human::setIsRecruiting(bool isRecruiting) {
-    Human::isRecruiting = isRecruiting;
 }
 
 void Human::move() {

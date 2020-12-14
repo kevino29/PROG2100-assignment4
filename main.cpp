@@ -1,14 +1,9 @@
 #include <iostream>
 #include <cstdlib>
-#include <random>
 #include <ctime>
-#include <windows.h>
-#include <conio.h>
 #include "Organism.h"
 #include "Human.h"
 #include "Zombie.h"
-#include "City.h"
-#include "GameSpecs.h"
 
 using namespace std;
 

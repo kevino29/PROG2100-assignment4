@@ -46,8 +46,6 @@ public:
     int getRandomInt(int min, int max);
     bool isTurn();
     void endTurn();
-
-    friend ostream& operator<<(ostream &output, Organism *organism);
 };
 
 #endif //ASSIGNMENT4_ORGANISM_H

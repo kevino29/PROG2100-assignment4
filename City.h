@@ -30,9 +30,7 @@ public:
     virtual ~City();
 
     int getHumanCount();
-    void setHumanCount(int humanCount);
     int getZombieCount();
-    void setZombieCount(int zombieCount);
     Organism* getOrganism( int x, int y );
     void setOrganism(Organism& organism, int x, int y);
 

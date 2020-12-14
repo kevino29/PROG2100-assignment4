@@ -24,15 +24,10 @@ public:
     void setSpecies(string species) override;
     string getSpecies() override;
     bool isStarving1() const;
-    void setIsStarving(bool isStarving);
-    int getConvertCooldown() const;
-    void setConvertCooldown(int convertCooldown);
     bool isConverting1() const;
-    void setIsConverting(bool isConverting);
 
     void move() override;
     string convert();
-    void starve();
 };
 
 #endif //ASSIGNMENT4_ZOMBIE_H

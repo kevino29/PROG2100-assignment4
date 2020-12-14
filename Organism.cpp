@@ -16,10 +16,6 @@ Organism::Organism(City& city, int x, int y) {
 
 Organism::~Organism() = default;
 
-//string Organism::getSpecies() {
-//    return this->species;
-//}
-
 int Organism::getX() const {
     return this->x;
 }
@@ -57,9 +53,5 @@ bool Organism::isTurn() {
 }
 
 void Organism::endTurn() {
-
-}
-
-ostream& operator<<(ostream &output, Organism *organism) {
 
 }

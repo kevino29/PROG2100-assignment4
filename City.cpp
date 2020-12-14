@@ -27,10 +27,6 @@ int City::getHumanCount() {
     return humanCount;
 }
 
-void City::setHumanCount(int humanCount) {
-    City::humanCount = humanCount;
-}
-
 int City::getZombieCount() {
     zombieCount = 0;
     for (auto & i : this->grid) {
@@ -42,10 +38,6 @@ int City::getZombieCount() {
         }
     }
     return zombieCount;
-}
-
-void City::setZombieCount(int zombieCount) {
-    City::zombieCount = zombieCount;
 }
 
 Organism* City::getOrganism(int x, int y) {
